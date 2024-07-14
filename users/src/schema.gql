@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Avatar {
+  id: ID!
+  url: String!
+  user_id: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  registerUsers(registerDto: RegisterUserDto!): RegisterResponse!
+}
+
+type Query {
+  getAllUsers: [User!]!
+}
+
+type RegisterResponse {
+  error: UsererrorType
+  user: User
+}
+
+input RegisterUserDto {
+  email: String!
+  name: String!
+  password: String!
+}
+
+type User {
+  avatar: Avatar
+  created_at: DateTime!
+  email: String!
+  id: ID!
+  name: String!
+  password: String!
+  role: String!
+  updated_at: DateTime!
+}
+
+type UsererrorType {
+  code: String
+  message: String!
+}

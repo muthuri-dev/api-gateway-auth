@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api-gateway/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/api-gateway",
+  "projects": {
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+      }
+    },
+    "users": {
+      "type": "application",
+      "root": "apps/users",
+      "entryFile": "main",
+      "sourceRoot": "apps/users/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "prisma-db": {
+      "type": "library",
+      "root": "libs/prisma-db",
+      "entryFile": "index",
+      "sourceRoot": "libs/prisma-db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/prisma-db/tsconfig.lib.json"
+      }
+    },
+    "sharedprisma": {
+      "type": "library",
+      "root": "libs/sharedprisma",
+      "entryFile": "index",
+      "sourceRoot": "libs/sharedprisma/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/sharedprisma/tsconfig.lib.json"
+      }
+    }
+  }
+}
